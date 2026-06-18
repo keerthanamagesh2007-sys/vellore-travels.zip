@@ -1,0 +1,55 @@
+/* ######### Matt Black Strip Main Menu Bar CSS ######### */
+
+.mattblackmenu ul{
+margin: 0; padding: 0; font: bold 13px Verdana; list-style-type: none; overflow: hidden; width: 100%;  }
+
+.mattblackmenu li{
+display: inline; margin: 0; float:left; }
+.mattblackmenu li img{ position:relative; top:5px; left:2px;}
+.mattblackmenu li a{float: left; display: block; font-weight:bold; text-decoration: none; margin: 0; padding: 12px 11px; color: white; text-transform:none; font-size:13px; }
+
+.mattblackmenu li a:visited{
+color: #fff; }
+
+.mattblackmenu li a:hover{
+background:#010182 url(../../images/menu-bg-h.jpg) repeat-x; color:#fff; }
+
+.mattblackmenu a.selected{
+background:#010182 url(../../images/menu-bg-h.jpg) repeat-x; color:#fff; }
+
+#index .mattblackmenu li.current1 a,
+#tourist .mattblackmenu li.current2 a,
+#hotels .mattblackmenu li.current3 a,
+#atm .mattblackmenu li.current4 a,
+#banks .mattblackmenu li.current5 a,
+#college .mattblackmenu li.current6 a,
+#online .mattblackmenu li.current7 a,
+#taxi .mattblackmenu li.current8 a,
+#tour .mattblackmenu li.current9 a,
+#contact .mattblackmenu li.current10 a{
+background:#010182 url(../../images/menu-bg-h.jpg) repeat-x; color:#fff; }
+
+/* ######### Drop Down ULs CSS ######### */
+
+.ddsubmenustyle, .ddsubmenustyle ul{ /*topmost and sub ULs, respectively*/
+font: normal 13px Verdana; margin: 0; padding: 0; position: absolute; left: 0; top: 0; list-style-type: none;  border-bottom-width: 0; visibility: hidden; z-index: 100; }
+
+.ddsubmenustyle li a{
+display: block; width: 200px; color: #fff; background-color: #b02983; text-decoration: none; padding: 8px 5px; border-bottom: 1px solid #D56112;}
+
+* html .ddsubmenustyle li{ 
+display: inline-block; width: 170px; }
+
+.ddsubmenustyle li a:hover{
+background-color: #2727a7; color: #fff; }
+
+/* ######### Neutral CSS  ######### */
+
+.downarrowpointer{ /*CSS for "down" arrow image added to top menu items*/
+padding-left: 5px; border: 0; }
+
+.rightarrowpointer{ /*CSS for "right" arrow image added to drop down menu items*/
+position: absolute; padding-top: 3px; left: 100px; border: 0; }
+
+.ddiframeshim {
+    background: none repeat scroll 0 0 transparent; border-width: 0; display: none; height: 0; position: absolute; width: 0; z-index: 500; }
