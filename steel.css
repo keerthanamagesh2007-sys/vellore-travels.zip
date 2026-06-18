@@ -1,0 +1,12 @@
+.DynarchCalendar-focused {
+  background-color: #CCC;
+}
+
+.DynarchCalendar-topBar {
+  background: url("calender/img/brushed-steel.jpg") no-repeat 50% 0;
+}
+
+/*.DynarchCalendar-bottomBar {
+  background: url("calender/img/brushed-steel.jpg") no-repeat 50% 50%;
+} */
+
