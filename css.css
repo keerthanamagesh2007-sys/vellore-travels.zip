@@ -1,0 +1,1326 @@
+/* 
+   Vellore Travels CSS - Modern Redesign (V2)
+   Responsive, high-end styling with premium HSL colors, modern typography, and CSS Grid/Flexbox
+*/
+
+:root {
+  /* Brand Palette - #cc0000 Crimson Red */
+  --primary: hsl(0, 100%, 40%);         /* #cc0000 Crimson Red */
+  --primary-light: hsl(0, 100%, 97%);   /* Rose Tint */
+  --primary-glow: hsla(0, 100%, 40%, 0.12);
+  --secondary: hsl(355, 75%, 32%);      /* Darker Carmine Red */
+  --secondary-light: hsl(355, 75%, 97%);
+  --accent: hsl(20, 85%, 52%);         /* Softer Warm Terracotta */
+  --accent-glow: hsla(20, 85%, 52%, 0.15);
+  
+  /* Neutral Palette */
+  --bg-gradient: linear-gradient(135deg, hsl(0, 20%, 98%), hsl(20, 15%, 97%));
+  --surface: hsl(0, 0%, 100%);
+  --surface-glass: rgba(255, 255, 255, 0.88);
+  --text: hsl(0, 20%, 20%);             /* Softer warm dark text */
+  --text-muted: hsl(0, 10%, 48%) ;
+  --border: hsl(0, 15%, 89%);
+  
+  /* Borders and Shadows - Milder and lighter */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 8px 24px rgba(204, 0, 0, 0.04);
+  --shadow-lg: 0 12px 38px rgba(204, 0, 0, 0.06);
+  --shadow-hover: 0 16px 48px rgba(204, 0, 0, 0.10);
+  
+  /* Fonts */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Animation */
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Base resets & typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+p, strong, td {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Main wrapper with glassmorphism glow */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 20px;
+}
+
+/* Header section */
+.grid1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  background: var(--primary);
+  border-radius: var(--radius-md);
+  flex-wrap: wrap;
+  gap: 15px;
+  box-shadow: var(--shadow-md);
+}
+
+.header-left a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: #ffffff !important;
+}
+
+.header-left h1 {
+  font-size: 32px;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  font-weight: 800;
+}
+
+.header-left em#rot img {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.header-left em#rot img:hover {
+  transform: rotate(360deg) scale(1.1);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-links {
+  display: flex;
+  gap: 12px;
+}
+
+.header-link-btn {
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--primary) !important;
+  background: #ffffff !important;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-link-btn:hover {
+  background: var(--secondary) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--secondary);
+}
+
+/* Clearfix class override */
+.clr {
+  clear: both;
+  display: none; /* Flexbox & Grid replace floats */
+}
+
+/* Navigation bar */
+.grid2 {
+  margin: 15px 0 25px 0;
+  border-radius: var(--radius-md);
+  overflow: visible;
+  box-shadow: var(--shadow-md);
+}
+
+.mattblackmenu {
+  background: linear-gradient(135deg, var(--primary), hsl(350, 90%, 15%)) !important;
+  border-radius: var(--radius-md);
+  padding: 6px 12px;
+}
+
+.mattblackmenu ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between; /* Evenly distribute menu items */
+  width: 100%;
+  list-style: none;
+}
+
+.mattblackmenu li {
+  display: block;
+}
+
+.mattblackmenu li img {
+  display: none; /* Remove legacy divider images */
+}
+
+.mattblackmenu li a {
+  color: hsl(0, 0%, 96%) !important;
+  font-family: var(--font-heading);
+  font-weight: 700; /* Bolder, premium look */
+  font-size: 14.5px;
+  letter-spacing: 0.03em; /* Clean letter spacing */
+  padding: 10px 20px !important; /* Adjusted horizontal and vertical spacing */
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  display: block;
+}
+
+.mattblackmenu li a:hover,
+.mattblackmenu a.selected,
+#index .mattblackmenu li.current1 a,
+#tourist .mattblackmenu li.current2 a,
+#hotels .mattblackmenu li.current3 a,
+#atm .mattblackmenu li.current4 a,
+#banks .mattblackmenu li.current5 a,
+#college .mattblackmenu li.current6 a,
+#online .mattblackmenu li.current7 a,
+#taxi .mattblackmenu li.current8 a,
+#tour .mattblackmenu li.current9 a,
+#contact .mattblackmenu li.current10 a {
+  background: #ffffff !important;
+  color: var(--primary) !important;
+  transform: translateY(-1px);
+}
+
+/* Dropdown Menu */
+.ddsubmenustyle {
+  background: var(--primary) !important;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  overflow: hidden;
+  padding: 5px 0;
+}
+
+.ddsubmenustyle li a {
+  width: 200px !important;
+  padding: 10px 16px !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.ddsubmenustyle li a:hover {
+  background: #ffffff !important;
+  color: var(--primary) !important;
+  padding-left: 20px !important;
+}
+
+/* Banner section */
+.grid3 {
+  width: 100% !important;
+  height: auto !important;
+  margin-bottom: 25px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.banner {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.mySlides img {
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  transition: transform 5s ease-in-out;
+}
+
+/* Main Grid Layout - 3 column responsive */
+.grid4 {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  gap: 25px;
+  width: 100% !important;
+  margin-bottom: 20px;
+}
+
+/* Sidebars (Left / Right) */
+.grid5, .grid5-right {
+  width: 100% !important;
+  min-height: auto !important;
+  background: var(--primary-light);
+  border-radius: var(--radius-md);
+  padding: 20px 15px;
+  border: 1px solid rgba(124, 1, 83, 0.08);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: fit-content;
+}
+
+.grid5 h2, .grid5-right h2 {
+  font-size: 18px;
+  color: var(--primary);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Sidebar List menu */
+.products {
+  width: 100% !important;
+  background: transparent !important;
+  padding-left: 0 !important;
+}
+
+.products li {
+  background: none !important;
+  line-height: normal !important;
+  margin-bottom: 8px;
+}
+
+.products li a {
+  background: var(--surface) !important;
+  border: 1px solid var(--border);
+  color: var(--text) !important;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  display: block;
+  padding: 10px 14px !important;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  line-height: 1.4 !important;
+}
+
+.products li a:hover {
+  background: var(--primary) !important;
+  color: #fff !important;
+  transform: translateX(5px);
+  border-color: var(--primary);
+}
+
+.products li:last-child {
+  margin-bottom: 0;
+}
+
+/* Mid Content Column */
+.grid6 {
+  width: 100% !important;
+  min-height: 500px !important;
+  background: var(--surface) !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.contents {
+  width: 100% !important;
+}
+
+.contents h1 {
+  font-size: 34px;
+  font-weight: 300; /* Light weight */
+  color: var(--text-muted); /* Softer light color */
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.contents h1 span {
+  font-weight: 800; /* Very bold */
+  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contents p {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.contents p img {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  margin: 5px 0 15px 15px;
+  transition: var(--transition);
+}
+
+.contents p img:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-lg);
+}
+
+.contents h2 {
+  font-size: 22px;
+  font-weight: 400; /* Light weight */
+  color: var(--text-muted);
+  margin: 30px 0 15px 0;
+}
+
+.contents h2 span {
+  font-weight: 800; /* Very bold */
+  color: var(--primary);
+}
+
+/* Feature Spotlight Component (Highly Colorful Banner for home/specials) */
+.spotlight-card {
+  background: linear-gradient(135deg, hsla(43, 100%, 50%, 0.1), hsla(320, 80%, 28%, 0.12));
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.spotlight-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--accent);
+  color: var(--primary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 30px;
+  text-transform: uppercase;
+}
+
+.spotlight-title {
+  font-size: 26px;
+  font-weight: 400; /* Light weight */
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.spotlight-title span {
+  font-weight: 800; /* Very bold */
+  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.spotlight-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  margin: 15px 0;
+  transition: var(--transition);
+}
+
+.spotlight-img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.spotlight-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.spotlight-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Scroller Gallery on Homepage */
+#scroller {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 5px;
+  list-style: none;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+#scroller li {
+  flex: 0 0 160px;
+  transition: var(--transition);
+}
+
+#scroller li a img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+#scroller li:hover {
+  transform: scale(1.05);
+}
+
+#scroller li a img:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+/* Form styling (Quick Enquiry & Booking) */
+form table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+form td {
+  padding: 8px 0;
+}
+
+/* Modern inputs override */
+input[type="text"], 
+input[type="email"], 
+textarea, 
+select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text);
+  background: var(--surface);
+  transition: var(--transition);
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+textarea:focus, 
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+/* Modern primary buttons */
+.button, .SUBBTN1, input[type="submit"] {
+  display: inline-block;
+  width: auto;
+  background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
+  color: #fff !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 10px 24px !important;
+  border: none !important;
+  border-radius: var(--radius-sm) !important;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  text-align: center;
+  text-transform: none;
+}
+
+.button:hover, .SUBBTN1:hover, input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  opacity: 0.95;
+}
+
+/* Testimonial ticker styling */
+.news-info {
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.news-info:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-glow);
+}
+
+.news-info h3 {
+  font-size: 14px;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.news-info a {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-decoration: none;
+  line-height: 1.4;
+  display: block;
+}
+
+/* Tourist places catalog grid page */
+.tourist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.tourist {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100% !important;
+  width: 100% !important;
+  transition: var(--transition);
+  padding: 0 0 15px 0 !important;
+}
+
+.tourist:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-glow);
+}
+
+.tourist img {
+  width: 100% !important;
+  height: 155px !important;
+  object-fit: cover !important;
+  border-radius: 0 !important;
+  position: static !important;
+}
+
+.tourist h2 {
+  font-size: 18px;
+  color: var(--primary);
+  padding: 12px 15px 6px 15px !important;
+}
+
+.tourist ul {
+  padding: 0 15px 15px 15px !important;
+  margin: 0 !important;
+  flex-grow: 1;
+}
+
+.tourist ul li {
+  list-style: inside disc !important;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-left: 0 !important;
+}
+
+a.info {
+  margin: 0 15px !important;
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 8px 12px !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 700;
+  text-align: center;
+  transition: var(--transition);
+  display: block;
+}
+
+a.info:hover {
+  background: var(--accent) !important;
+  color: var(--primary) !important;
+  transform: translateY(-1px);
+}
+
+/* Listings Tables (Hotels, colleges, banks, etc) */
+.sub-tab {
+  width: 100% !important;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 15px 0;
+}
+
+.sub-tab tr.head {
+  background: var(--primary) !important;
+}
+
+.sub-tab tr.head td {
+  padding: 12px 16px;
+  color: #fff !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+}
+
+.sub-tab tr.light {
+  background: var(--surface) !important;
+  transition: var(--transition);
+}
+
+.sub-tab tr.light:nth-child(even) {
+  background: var(--primary-light) !important;
+}
+
+.sub-tab tr.light td {
+  padding: 15px 16px !important;
+  font-size: 13.5px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text) !important;
+  line-height: 1.6;
+}
+
+.sub-tab tr.light:last-child td {
+  border-bottom: none;
+}
+
+.sub-tab tr.light:hover {
+  background: var(--accent-glow) !important;
+}
+
+/* Footer styling */
+.grid7 {
+  width: 100% !important;
+  height: auto !important;
+  background: var(--primary) !important;
+  border-radius: var(--radius-md);
+  margin: 25px 0 0 0 !important;
+  padding: 15px 20px;
+  box-shadow: var(--shadow-md);
+}
+
+.grid7 ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.grid7 ul li {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.grid7 ul li a {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-family: var(--font-body);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+/* Hotels grid and card styles */
+.hotel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.hotel-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+}
+
+.hotel-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-glow);
+}
+
+.hotel-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.hotel-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+}
+
+.hotel-category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-sm);
+}
+
+.hotel-category.budget {
+  background: #2e7d32 !important; /* Green for budget friendly */
+}
+
+.hotel-category.midrange {
+  background: #f57c00 !important; /* Orange for mid-range */
+}
+
+.hotel-category.luxury {
+  background: #cc0000 !important; /* Red for luxury */
+}
+
+.hotel-name {
+  font-size: 18px;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.hotel-stars {
+  color: #ffb300; /* Gold color for stars */
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.hotel-rating-score {
+  background: hsl(45, 100%, 93%) !important;
+  color: hsl(40, 100%, 30%) !important;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 2px 8px !important;
+  border-radius: 4px;
+  margin-left: 8px;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.hotel-details {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.hotel-address {
+  font-size: 12.5px;
+  color: var(--text);
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.hotel-btn {
+  display: block;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #ffffff !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 12.5px;
+  text-align: center;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: var(--transition);
+  margin-top: 10px;
+}
+
+.hotel-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Tour Operator Grid & Card Styles */
+.operator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.operator-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+}
+
+.operator-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-glow);
+}
+
+.operator-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.operator-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+}
+
+.operator-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-sm);
+}
+
+.operator-tag.pilgrimage {
+  background: #e65100 !important; /* Orange/Gold for spiritual */
+}
+
+.operator-tag.nature {
+  background: #2e7d32 !important; /* Green for adventure/nature */
+}
+
+.operator-tag.heritage {
+  background: #cc0000 !important; /* Crimson red for heritage */
+}
+
+.operator-tag.leisure {
+  background: #0288d1 !important; /* Blue for family/leisure */
+}
+
+.operator-name {
+  font-size: 18px;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.operator-stars {
+  color: #ffb300; /* Gold color for stars */
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.operator-rating-score {
+  background: hsl(45, 100%, 93%) !important;
+  color: hsl(40, 100%, 30%) !important;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 2px 8px !important;
+  border-radius: 4px;
+  margin-left: 8px;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.operator-details {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.operator-address {
+  font-size: 12.5px;
+  color: var(--text);
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  line-height: 1.4;
+}
+
+/* Taxi Grid & Card Styles */
+.taxi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.taxi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+}
+
+.taxi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-glow);
+}
+
+.taxi-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.taxi-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+}
+
+.taxi-status {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-sm);
+  background: #cc0000 !important;
+}
+
+.taxi-status.available {
+  background: #2e7d32 !important; /* Green for 24/7 */
+}
+
+.taxi-status.airport {
+  background: #5e35b1 !important; /* Purple for airport transit */
+}
+
+.taxi-status.pilgrimage {
+  background: #e65100 !important; /* Orange/Gold for pilgrimage tours */
+}
+
+.taxi-status.local {
+  background: #cc0000 !important; /* Crimson for local cabs */
+}
+
+
+.taxi-name {
+  font-size: 18px;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.taxi-details {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.taxi-address {
+  font-size: 12.5px;
+  color: var(--text);
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  line-height: 1.4;
+}
+
+/* Bank Grid & Card Styles */
+.bank-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.bank-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+}
+
+.bank-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-glow);
+}
+
+.bank-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.bank-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+}
+
+.bank-status {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-sm);
+  background: var(--secondary) !important;
+}
+
+.bank-name {
+  font-size: 18px;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.bank-details {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.bank-address {
+  font-size: 12.5px;
+  color: var(--text);
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  line-height: 1.4;
+}
+
+/* ATM Grid & Card Styles */
+.atm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.atm-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+}
+
+.atm-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-glow);
+}
+
+.atm-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.atm-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+}
+
+.atm-status {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-sm);
+  background: #2e7d32 !important; /* Green for active status */
+}
+
+.atm-bank {
+  font-size: 18px;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.atm-details {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.atm-address {
+  font-size: 12.5px;
+  color: var(--text);
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  line-height: 1.4;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .grid4 {
+    grid-template-columns: 200px 1fr;
+  }
+  
+  .grid5-right {
+    grid-column: 1 / -1; /* Push right sidebar to bottom, span full width */
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  .wrap {
+    padding: 15px;
+  }
+  
+  .grid1 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .header-right {
+    width: 100%;
+  }
+  
+  .header-right img {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100%;
+    height: auto;
+  }
+  
+  .grid4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid5 {
+    grid-column: 1 / -1;
+  }
+  
+  .mySlides img {
+    height: 220px;
+  }
+  
+  .grid7 ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .grid7 ul li {
+    display: none; /* Hide separators on mobile */
+  }
+  
+  .grid7 ul li:has(a) {
+    display: block;
+  }
+}
